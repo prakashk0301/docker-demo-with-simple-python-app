@@ -24,8 +24,9 @@ stages:
       displayName: "docker Build and Push"
       inputs:
         containerRegistry: 'docker-acr-mintt-outlook'
-        repository: 'ethansacr'
+        repository: 'python'
         command: 'buildAndPush'
         Dockerfile: 'Dockerfile'
+        tags: 'latest'
 
   
