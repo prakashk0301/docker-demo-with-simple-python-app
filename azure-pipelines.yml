@@ -21,15 +21,11 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
-      displayName: Build an image
+      displayName: "docker Build and Push"
       inputs:
         containerRegistry: 'docker-acr-mintt-outlook'
         repository: 'ethansacr'
         command: 'buildAndPush'
         Dockerfile: 'Dockerfile'
-      displayName: "ACR image Upload"
-      inputs:
-        containerRegistry: 'docker-acr-mintt-outlook'
-        repository: 'ethansacr'
-        command: 'push'
+
   
