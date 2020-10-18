@@ -26,4 +26,10 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
-          $(tag)
+          $(Build.BuildId)
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'docker-acr-mintt-outlook'
+        repository: 'ethansacr'
+        command: 'push'
+  
